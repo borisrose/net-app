@@ -1,0 +1,39 @@
+.container {
+
+  
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 0 3px black;
+    margin-bottom: 100px;
+    color: black;
+
+
+
+    .buttons {
+
+ 
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        
+
+        .button {
+
+            padding: 8px 20px;
+            font-weight: bold;
+            background-color: gray;
+            color: white;
+            border: none;
+            opacity: 0.7;
+            margin: 20px 0;
+            
+
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+    }
+}

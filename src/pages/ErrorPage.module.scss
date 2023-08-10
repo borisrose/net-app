@@ -1,0 +1,17 @@
+.container {
+
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link {
+    color: black;
+    background-color: beige;
+    padding: 10px;
+    box-shadow: 0 0 0 1px black;
+    text-decoration: none;
+}

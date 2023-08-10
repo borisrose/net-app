@@ -1,0 +1,79 @@
+.container{
+
+    border: solid black 2px;
+    width: 100%;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lowerContainer {
+    display: flex;
+    flex-direction: column;
+    border: solid green 2px;
+}
+
+.bodyTableContainer {
+
+    display: flex;
+    flex-direction: column;
+    border: solid red 3px;
+}
+
+.dataTableContainer {
+
+    display: flex;
+    border: solid black 3px;
+    justify-content: space-evenly;
+
+
+}
+
+.dataTableContainer td {
+
+    width: 10%;
+    border: solid lightblue 4px;
+    overflow: hidden;
+}
+
+.headerTableContainer {
+
+
+    overflow: hidden;
+    border: solid  4px lightgreen;
+    display: flex;
+    width: 10%;
+    justify-content: space-evenly;
+   
+    
+}
+
+.caretsContainer {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.columnsContainer {
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon {
+
+    opacity: 0.8;
+
+   
+
+}
+
+ 
+.icon:hover {
+
+    opacity: 1;
+    cursor: pointer;
+}
