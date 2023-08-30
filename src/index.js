@@ -8,6 +8,8 @@ import ErrorPage from './pages/ErrorPage';
 import EmployeeListPage from './pages/EmployeeListPage';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {  faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 library.add(faCaretUp, faCaretDown);
 
 
@@ -25,17 +27,14 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   }
 
-
-
-
-
-
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider  router={router}/>
+    <Provider store={store}>
+      <RouterProvider  router={router}/>
+    </Provider>
   </React.StrictMode>
 );
 
