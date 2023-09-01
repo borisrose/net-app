@@ -10,6 +10,7 @@ function Form ({ form, button, address, department }){
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const [ hasError, setHasError] = useState(false)
+    const [ hasCreated, setHasCreated] = useState(false)
 
     const [ formInputs, setForm] = useState({})
 
@@ -95,7 +96,12 @@ function Form ({ form, button, address, department }){
         }
  
         dispatch(createEmployee(formInputs))
-        navigate('/employee-list')
+        setHasCreated(true)
+        setTimeout(() => {
+            setHasCreated(false)
+            navigate('/employee-list')
+        }, 2000)
+    
     }
 
 
@@ -117,7 +123,7 @@ function Form ({ form, button, address, department }){
     }, [hasError])
 
     return(
-
+     
         <form className={styles.container} onSubmit={onSubmitForm}>
 
             { form && form.map((el,index) => <FormInput obj={el} key={index} onInputChange={onChangeHandler}/>)}
@@ -131,12 +137,20 @@ function Form ({ form, button, address, department }){
             <FormInput obj={department} onInputChange={onChangeHandler} />
             <div className={styles.popupContainer}>  {hasError ? <p className={styles.popupMessage}>Vous devez remplir tous les champs</p>: ''} </div>
             <section className={styles.buttons}>
-                <button className={styles.button} disabled={hasError}>{button}</button>
+                {!hasCreated && <button className={styles.button} disabled={hasError}>{button}</button>}
             </section>
-    
+            {hasCreated && <div className={styles.successPopup}> 
+                <div className={styles.successMessageContainer}>
+                    <p> New Employee Successfully Created </p>
+                    <span> redirection... </span>
+                </div>
+        
+            </div>}
+           
 
         </form>
-
+      
+    
 
     )
 

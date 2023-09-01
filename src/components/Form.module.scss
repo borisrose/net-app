@@ -8,6 +8,30 @@
     margin-bottom: 100px;
     color: black;
 
+    .successPopup {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        position:fixed;  
+        background-color: rgba($color: #000000, $alpha: 0.6);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .successMessageContainer {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: white;
+            span {
+                font-size: 10px;
+                font-weight: bold;
+            }
+        }
+    }
+
     .popupContainer {
         height: 40px;
         color: red;
