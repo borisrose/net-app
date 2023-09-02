@@ -2,51 +2,41 @@ import FormInput from "./FormInput"
 import styles from "./Form.module.scss"
 import { useEffect, useState } from "react"
 import { createEmployee } from "../features/employee/employeeSlice"
-import { useSelector, useDispatch} from "react-redux"
+import { useDispatch} from "react-redux"
 import { useNavigate} from "react-router-dom"
 
 function Form ({ form, button, address, department }){
-
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const [ hasError, setHasError] = useState(false)
     const [ hasCreated, setHasCreated] = useState(false)
-
     const [ formInputs, setForm] = useState({})
-
     const onChangeHandler = (e, modifiedProp, selectArrayName) => {    
         if(modifiedProp.name === 'firstname'){
             setForm({ ...formInputs,firstname : e.target.value})
         }
-
         if(modifiedProp.name === 'lastname'){
            setForm({ ...formInputs,lastname : e.target.value})
         }
-
         if(modifiedProp.name === 'dateOfBirth'){
             setForm({...formInputs, dateOfBirth : e.target.value })
         }
-
         if(modifiedProp.name === 'startdate'){
             setForm({...formInputs,
-                startDate : e.target.value })
+                startDate: e.target.value })
         }
-
         if(modifiedProp.name === 'street'){
             setForm({...formInputs,
-                street : e.target.value })
+                street: e.target.value })
         }
-
         if(modifiedProp.name === 'zipcode'){
             setForm({...formInputs,
-                zipCode : e.target.value })
+                zipCode: e.target.value })
         }
-
-        if(modifiedProp.name === 'city'){
+        if(modifiedProp.name ==='city'){
             setForm({...formInputs,
-                city : e.target.value })
+                city: e.target.value })
         }
-
         if(selectArrayName === 'department'){
             setForm({...formInputs,
                 department: e.target.value })
@@ -58,9 +48,7 @@ function Form ({ form, button, address, department }){
                 state: e.target.value
             })
         }
-       
     }
-
     const formChecker = (obj) => {
 
         console.log('into formChecker', obj)
@@ -72,13 +60,11 @@ function Form ({ form, button, address, department }){
             emptyValuesArray.push('empty')
             return emptyValuesArray
         }
-
         Object.keys(obj).forEach((key) => {
             if(obj[key] === ""){
                 emptyValuesArray.push(key)
             }
         })
-
         return emptyValuesArray
     }
 
