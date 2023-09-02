@@ -36,13 +36,13 @@ function HomePage() {
       name: 'street',
       placeholder: 'Street',
       type:'text',
-      pattern: /^[a-zA-Z\-]{3,20}$/
+      pattern: /^[a-zA-Z-]{3,20}$/
     },
     {  
       name: 'city',
       placeholder: 'City',
       type:'text',
-      pattern: /^[a-zA-Z\-]{3,20}$/
+      pattern: /^[a-zA-Z-]{3,20}$/
     },
     {
       name: 'state',
