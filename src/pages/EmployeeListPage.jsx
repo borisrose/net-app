@@ -1,8 +1,8 @@
 import styles from "./EmployeeListPage.module.scss"
 import TableX from "table-x-library/dist/table-x"
-import { useSelector } from "react-redux"
+import {useSelector} from "react-redux"
 import { useEffect, useState } from "react"
-import { faker, fakerEN_US} from "@faker-js/faker"
+
 
 
 const EmployeeListPage = () =>{
